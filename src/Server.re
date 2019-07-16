@@ -90,6 +90,25 @@ module Make = (Messages: Messages.S) => {
     let on = (socket, func) =>
       _on(socket, "message", obj => func(Json.fromValidJson(obj)));
 
+    [@bs.send]
+    external _onWithAck:
+      (
+        socketT,
+        string,
+        (Messages.clientToServer, Messages.serverToClient => unit) => unit
+      ) =>
+      unit = "on";
+    let onWithAck = (socket, func) =>
+      _onWithAck(
+        socket,
+        "message",
+        (obj, ack) => {
+          let ack = obj => Json.toValidJson(obj) |> ack;
+          func(Json.fromValidJson(obj), ack);
+        },
+      );
+
+
     /*** */
     let emit = (socket: socketT, obj: Messages.serverToClient) =>
       _emit(socket, "message", Json.toValidJson(obj));

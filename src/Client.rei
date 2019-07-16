@@ -11,6 +11,8 @@ module Make:
     /*** Same as the server-side `emit`, doesn't take a message name.
          The recommended payload type to send is a variant wSocket.io docs: https://socket.io/docs/client-api/#socket-emit-eventname-args-ack */
     let emit: (t, Messages.clientToServer) => unit;
+    let emitWithAck:
+      (t, Messages.clientToServer, Messages.serverToClient => unit) => unit;
 
     /*** Same ideas as explained above.
          Socket.io docs: https://socket.io/docs/client-api/#socket-on-eventname-callback */

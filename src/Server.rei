@@ -82,6 +82,13 @@ module Make:
            Socket.io docs: https://socket.io/docs/server-api/#socket-on-eventname-callback */
       let on: (socketT, Messages.clientToServer => unit) => unit;
 
+      let onWithAck:
+        (
+          socketT,
+          (Messages.clientToServer, Messages.serverToClient => unit) => unit
+        ) =>
+        unit;
+
       /*** Same difference as stated above.
            Socket.io docs: https://socket.io/docs/server-api/#socket-emit-eventname-args-ack */
       let emit: (socketT, Messages.serverToClient) => unit;
