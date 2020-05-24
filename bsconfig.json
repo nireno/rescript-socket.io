@@ -1,5 +1,5 @@
 {
-  "name": "bs-socket",
+  "name": "bs-socketio",
   "bsc-flags": ["-w", "-20"],
   "package-specs": {
     "module": "commonjs",
