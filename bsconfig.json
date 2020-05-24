@@ -1,15 +1,15 @@
 {
-  "name": "bs-socketio",
+  "name": "@nireno/bs-socketio",
   "bsc-flags": ["-w", "-20"],
   "package-specs": {
     "module": "commonjs",
     "in-source": true
   },
   "suffix": ".bs.js",
-  "namespace": true,
+  "namespace": "bs-socketio",
   "sources": [
     {
-      "dir": "src",
+      "dir": "src"
     },
     {
       "dir": "example",
