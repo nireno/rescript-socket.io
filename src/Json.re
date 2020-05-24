@@ -6,8 +6,8 @@
            Ben - July 24 2017
    */
 let toValidJson = [%raw
-  (o) =>
-  {|
+{|  
+(o) => {
   switch (typeof o){
     case "boolean":
     case "number":
@@ -21,12 +21,13 @@ let toValidJson = [%raw
       }
       throw new Error("Cannot serialize unidentified object [" + o + "].")
   }
+}
 |}
 ];
 
 let fromValidJson = [%raw
-  (o) =>
-  {|
+{| 
+(o) => {
   switch (typeof o){
     case "boolean":
     case "number":
@@ -47,5 +48,6 @@ let fromValidJson = [%raw
       }
       throw new Error("Cannot deserialize unidentified object [" + o + "].")
   }
+}
 |}
 ];

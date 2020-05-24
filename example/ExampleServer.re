@@ -2,12 +2,12 @@
 module Path = {
   type pathT;
   [@bs.module "path"] [@bs.splice]
-  external join : array(string) => string = "";
+  external join : array(string) => string = "join";
 };
 
 module Express = {
   type expressT;
-  [@bs.module] external express : unit => expressT = "";
+  [@bs.module] external express : unit => expressT = "express";
   [@bs.send] external use : (expressT, string) => unit = "use";
   [@bs.module "express"] external static : string => string = "static";
   type responseT;
@@ -19,7 +19,7 @@ module Express = {
 module Http = {
   type http;
   [@bs.module "http"] external create : Express.expressT => http = "Server";
-  [@bs.send] external listen : (http, int, unit => unit) => unit = "";
+  [@bs.send] external listen : (http, int, unit => unit) => unit = "listen";
 };
 
 /* ------------ Real API demo stars here ------------ */
@@ -27,7 +27,7 @@ let app = Express.express();
 
 let http = Http.create(app);
 
-[@bs.val] external __dirname : string = "";
+[@bs.val] external __dirname : string = "__dirname";
 
 Express.use(app, Express.static(Path.join([|__dirname, ".."|])));
 
