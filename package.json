@@ -1,5 +1,5 @@
 {
-  "name": "@nireno/bs-socket",
+  "name": "@nireno/bs-socketio",
   "version": "0.1.0",
   "description": "socket.io in Reason",
   "scripts": {
@@ -19,5 +19,6 @@
   "peerDependencies": {
     "bs-platform": "^5.0.0"
   },
-  "author": "Benjamin San Souci <benjamin.sansouci@gmail.com>"
+  "author": "Benjamin San Souci <benjamin.sansouci@gmail.com>",
+  "files": [ "/src", "/bsconfig.json"]
 }
