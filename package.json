@@ -1,6 +1,6 @@
 {
   "name": "@nireno/bs-socketio",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "socket.io in Reason",
   "scripts": {
     "build": "bsb -make-world",
