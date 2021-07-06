@@ -69,9 +69,6 @@ module Make:
            A socket's unique id can be thought of as a room that has only that socket. */
       let getId: socketT => room;
 
-      /*** Socket.io docs: https://socket.io/docs/server-api/#socket-rooms */
-      let getRooms: socketT => Js.t(room);
-
       /*** Socket.io docs: https://socket.io/docs/server-api/#socket-handshake */
       let getHandshake: socketT => Js.t('a);
 

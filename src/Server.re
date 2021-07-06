@@ -80,7 +80,6 @@ module Make = (Messages: Messages.S) => {
    */
   module Socket = {
     [@bs.get] external getId : socketT => room = "id";
-    [@bs.get] external getRooms : socketT => Js.t('a) = "rooms";
     [@bs.get] external getHandshake : socketT => Js.t('a) = "handshake";
     /* Here 'a means that you can send anything you want, and it'll depend on
        Bucklescript */
