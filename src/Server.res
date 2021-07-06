@@ -89,20 +89,20 @@ module Make = (Messages: Messages.S) => {
     ) => unit = "on"
     let onWithAck = (socket, func) =>
       _onWithAck(socket, "message", (obj, ack) => {
-        let ack = obj => Json.toValidJson(obj) |> ack
+        let ack = obj => Js.Json.stringify(obj) |> ack
         func(Json.fromValidJson(obj), ack)
       })
 
     /* ** */
     let emit = (socket: socketT, obj: Messages.serverToClient) =>
-      _emit(socket, "message", Json.toValidJson(obj))
+      _emit(socket, "message", Js.Json.stringify(obj))
 
     /* ** */
     type broadcastT
     @get
     external _unsafeGetBroadcast: socketT => broadcastT = "broadcast"
     let broadcast = (socket, data: Messages.serverToClient) =>
-      _emit(_unsafeGetBroadcast(socket), "message", Json.toValidJson(data))
+      _emit(_unsafeGetBroadcast(socket), "message", Js.Json.stringify(data))
 
     /* ** */
     @send external join: (socketT, string) => socketT = "join"
@@ -124,7 +124,7 @@ module Make = (Messages: Messages.S) => {
     @send
     external _volatileEmit: (volatileT, string, 'a) => unit = "emit"
     let volatileEmit = (server: socketT, obj: Messages.serverToClient): unit =>
-      _volatileEmit(getVolatile(server), "message", Json.toValidJson(obj))
+      _volatileEmit(getVolatile(server), "message", Js.Json.stringify(obj))
     let onDisconnect = (socket, cb) => _on(socket, "disconnect", _ => cb())
   }
   @send
