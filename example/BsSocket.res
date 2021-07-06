@@ -5,7 +5,6 @@
                             Ben - May the 4th 2018
 */
 
-
-module Server = Server;
-module Client = Client;
-module Namespace = Namespace;
+module Server = Server
+module Client = Client
+module Namespace = Namespace
