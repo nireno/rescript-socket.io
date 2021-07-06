@@ -1,24 +1,22 @@
 {
-  "name": "@nireno/bs-socketio",
-  "version": "0.2.4",
-  "description": "socket.io in Reason",
+  "name": "@nireno/rescript-socket.io",
+  "version": "0.1.0",
+  "description": "socket.io in Rescript",
   "scripts": {
-    "build": "bsb -make-world",
-    "start": "bsb -make-world -w",
-    "clean": "bsb -clean-world",
+    "build": "rescript build -with-deps",
+    "start": "rescript build -w -with-deps",
+    "clean": "rescript clean",
     "test": "exit 0",
     "run": "node example/ExampleServer.bs.js"
   },
   "dependencies": {
-    "socket.io": "^2.2.0"
+    "socket.io": "^4.1.2"
   },
   "devDependencies": {
-    "bs-platform": "^7.3.2",
-    "express": "^4.14.0"
+    "express": "^4.17.1",
+    "rescript": "^9.1.4"
   },
-  "peerDependencies": {
-    "bs-platform": "^5.0.0"
-  },
+  "peerDependencies": {},
   "author": "Benjamin San Souci <benjamin.sansouci@gmail.com>",
   "files": [
     "/src",
