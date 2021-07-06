@@ -1,5 +1,5 @@
 {
-  "name": "@nireno/bs-socketio",
+  "name": "@nireno/rescript-socket.io",
   "bsc-flags": ["-w", "-20"],
   "package-specs": {
     "module": "commonjs",
