@@ -106,7 +106,7 @@ module Make: (Messages: Messages.S) =>
     let use: (socketT, ('packet, ~next: unit => unit) => unit) => unit
 
     /* ** Socket.io docs: https://socket.io/docs/server-api/#socket-once-eventname-listener */
-    let once: (socketT, 'a => unit) => unit
+    let once: (socketT, Messages.serverToClient => unit) => unit
 
     /* ** Socket.io docs: https://socket.io/docs/server-api/#flag-volatile */
     type volatileT
