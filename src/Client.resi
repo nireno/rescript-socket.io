@@ -15,4 +15,6 @@ module Make: (Messages: Messages.S) =>
   /* ** Same ideas as explained above.
    Socket.io docs: https://socket.io/docs/client-api/#socket-on-eventname-callback */
   let on: (t, Messages.serverToClient => unit) => unit
+
+  let onDisconnect: (t, unit => unit) => unit
 }

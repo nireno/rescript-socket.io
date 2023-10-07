@@ -13,4 +13,6 @@ module Make = (Messages: Messages.S) => {
 
   @send external _on: (t, string, 'a => unit) => unit = "on"
   let on = (socket, func: Messages.serverToClient => unit) => _on(socket, "message", func)
+
+  let onDisconnect = (socket, cb) => _on(socket, "disconnect", _ => cb())
 }
