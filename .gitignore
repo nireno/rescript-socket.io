@@ -1,6 +1,9 @@
 .DS_Store
 _build
-lib
 /node_modules/
+
+#Rescript
+.bsb.lock
 .merlin
 *.js
+lib
