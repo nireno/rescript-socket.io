@@ -1,6 +1,6 @@
 {
   "name": "@nireno/rescript-socket.io",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "socket.io in Rescript",
   "scripts": {
     "build": "rescript build -with-deps",
